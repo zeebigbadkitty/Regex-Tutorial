@@ -38,15 +38,29 @@ To me, the most recognizable portion in a regex expression are what's in between
 
 ```[a-z0-9_\.-]```
 
-If we look at our first bracket expression, it tells us that the characters a-z as well as the numbers 0-9 can be contained in our string. This also tells us that special characters such as an underscore, backslash, period, and hyphen are permitted. 
+If we look at our first bracket expression, it tells us that the characters a-z as well as the numbers 0-9 can be contained in our string. This also tells us that special characters such as an underscore, backslash, period, and hyphen are permitted. The important take away from this section is that the characters within these brackets define a range of possible characters in that segment of your expression. 
+
+We'll circle back on other characters that may be included inside brackets in a later segment. 
 
 ### Grouping Constructs
+
+So what if we have multiple bracket expressions? These can be grouped together and can act as a single unit by wrapping them in parenthesis (kind of like the order of operations in mathematics.)
+
+``` /^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/ ```
+
+Notice again in our example that there are multiple bracket expressions encased in parenthesis; this is to group them and order them. 
+
 
 ### Quantifiers
 
 ### Character Classes
 
 ### The OR Operator
+
+Within your expression an "or" operator may be found, or a pipe, similar to the operator we use in other programming languages. 
+
+``` (this|that)```
+
 
 ### Flags
 
