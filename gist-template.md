@@ -32,11 +32,17 @@ When we talk about anchors, we're talking less about the specific text we're mat
 
 (For the purpose of our expression, word boundaries aren't used.)
 
-### Quantifiers
+### Bracket Expressions
+
+To me, the most recognizable portion in a regex expression are what's in between the square brackets; nested inside these brackets are the range of characters that are permitted in your expression. To explain further, let's look at our example. 
+
+```[a-z0-9_\.-]```
+
+If we look at our first bracket expression, it tells us that the characters a-z as well as the numbers 0-9 can be contained in our string. This also tells us that special characters such as an underscore, backslash, period, and hyphen are permitted. 
 
 ### Grouping Constructs
 
-### Bracket Expressions
+### Quantifiers
 
 ### Character Classes
 
