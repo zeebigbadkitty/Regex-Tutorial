@@ -8,7 +8,7 @@ So... what does a regular expression look like?
 
 ``` /^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/ ```
 
-The expression we'll be talking about today is the regular expression that defines the search pattern for a "valid" e-mail address. Remember: these expressions validate that a given input matches a specified criteria. Let's learn how! 
+The expression we'll be talking about today is the regular expression that defines the search pattern for a "valid" e-mail address. We can recognize an expression because it is encased between two backward slashes (//) Remember: these expressions validate that a given input matches a specified criteria. Let's learn how! 
 
 
 ## Table of Contents
@@ -46,6 +46,8 @@ We'll circle back on other characters that may be included inside brackets in a 
 
 Just like you would think based on the name, quantifiers help identify the quantity of characters to match. They can also specify the number of instances of a group in a string. The idea here is that the quantifier will tell us how many times something is repeated. 
 
+((What do they look like?))
+
 
 ### Grouping Constructs
 
@@ -56,17 +58,30 @@ So what if we have multiple bracket expressions? These can be grouped together a
 Notice again in our example that there are multiple bracket expressions encased in parenthesis; this is to group them and order them. 
 
 ### Character Classes
+These are the special roles that certain characters play within a given expression and they are indicated by a backslash. Here is an incomplete listing of the following characters that have these roles: 
+
+/s and /S: ((spaces))
+/d and /D: ((digit))
+/w and /W: ((word))
+
+Another example of a special role that a character can play are anchors; remember /b and /B? Their special role was to show us the boundaries of a word. 
+
+### Flags
+Another grouping of characters that have a special job to do are flags; when we come across a flag, we take a specific action. Here are some examples: 
+
+g: searches for a pattern of groups, or an occurrence of groups. 
+i: makes the search non-case sensitive. 
+m: enables multi lines; lines begin with a carat (^) and end with a dollar sign ($.)
+u: enables the use of unicode. 
 
 ### Character Escapes
+So what if we want to use one of these nifty characters in our expression just as they are. If we want to match the actual character, we add a backslash to "escape" that rule that is typically applied to that character. 
 
 ### The OR Operator
 
 Within your expression an "or" operator may be found, or a pipe, similar to the operator we use in other programming languages. 
 
 ``` (this|that)```
-
-
-### Flags
 
 
 ## Author
