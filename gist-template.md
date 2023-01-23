@@ -1,12 +1,15 @@
 # Regex Tutorial: Matching an E-mail Address
 
-Introductory paragraph (replace this with your text)
+What does "regex" mean? It's short for "regular expression" which in programming or computer science is used to define a search pattern in text form (or rather, in the form of a string.) Even that definition can cause some pause, so I'll elaborate further to say that these expressions are capable of matching a portion of a string and therefore validating that a given input matches a specified criteria.
 
 ## Summary
 
-Briefly summarize the regex you will be describing and what you will explain. Include a code snippet of the regex. Replace this text with your summary.
+So... what does a regular expression look like? 
 
 ``` /^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/ ```
+
+The one we'll be talking about today is the regular expression that defines the search pattern for a "valid" e-mail address. Remember: these expressions validate that a given input matches a specified criteria. Let's learn how! 
+
 
 ## Table of Contents
 
