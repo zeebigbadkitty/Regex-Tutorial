@@ -42,4 +42,4 @@ The one we'll be talking about today is the regular expression that defines the 
 
 ## Author
 
-A short section about the author with a link to the author's GitHub profile (replace with your information and a link to your profile)
+My name is Candice and I'm a student currently enrolled in a fullstack bootcamp. I'm coming into programming with only a medical background and a desire to learn something new. You can reach me via Github at the [link posted here.](https://github.com/zeebigbadkitty)
