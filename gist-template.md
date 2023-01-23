@@ -42,6 +42,11 @@ If we look at our first bracket expression, it tells us that the characters a-z 
 
 We'll circle back on other characters that may be included inside brackets in a later segment. 
 
+### Quantifiers
+
+Just like you would think based on the name, quantifiers help identify the quantity of characters to match. They can also specify the number of instances of a group in a string. The idea here is that the quantifier will tell us how many times something is repeated. 
+
+
 ### Grouping Constructs
 
 So what if we have multiple bracket expressions? These can be grouped together and can act as a single unit by wrapping them in parenthesis (kind of like the order of operations in mathematics.)
@@ -50,10 +55,9 @@ So what if we have multiple bracket expressions? These can be grouped together a
 
 Notice again in our example that there are multiple bracket expressions encased in parenthesis; this is to group them and order them. 
 
-
-### Quantifiers
-
 ### Character Classes
+
+### Character Escapes
 
 ### The OR Operator
 
@@ -64,7 +68,6 @@ Within your expression an "or" operator may be found, or a pipe, similar to the 
 
 ### Flags
 
-### Character Escapes
 
 ## Author
 
