@@ -21,6 +21,7 @@ The expression we'll be talking about today is the regular expression that defin
 - [The OR Operator](#the-or-operator)
 - [Flags](#flags)
 - [Character Escapes](#character-escapes)
+- [Conclusion](#conclusion)
 
 ## Regex Components
 
@@ -60,19 +61,19 @@ Notice again in our example that there are multiple bracket expressions encased 
 ### Character Classes
 These are the special roles that certain characters play within a given expression and they are indicated by a backslash. Here is an incomplete listing of the following characters that have these roles: 
 
-*/s and /S: ((spaces))
-*/d and /D: ((digit))
-*/w and /W: ((word))
+1. /s and /S: ((spaces))
+2. /d and /D: ((digit))
+3. /w and /W: ((word))
 
 Another example of a special role that a character can play are anchors; remember /b and /B? Their special role was to show us the boundaries of a word. 
 
 ### Flags
 Another grouping of characters that have a special job to do are flags; when we come across a flag, we take a specific action. Here are some examples: 
 
-*g: searches for a pattern of groups, or an occurrence of groups. 
-*i: makes the search non-case sensitive. 
-*m: enables multi lines; lines begin with a carat (^) and end with a dollar sign ($.)
-*u: enables the use of unicode. 
+* g: searches for a pattern of groups, or an occurrence of groups. 
+* i: makes the search non-case sensitive. 
+* m: enables multi lines; lines begin with a carat (^) and end with a dollar sign ($.)
+* u: enables the use of unicode. 
 
 ### Character Escapes
 So what if we want to use one of these nifty characters in our expression just as they are. If we want to match the actual character, we add a backslash to "escape" that rule that is typically applied to that character. 
