@@ -14,12 +14,12 @@ The expression we'll be talking about today is the regular expression that defin
 ## Table of Contents
 
 - [Anchors](#anchors)
+- [Bracket Expressions](#bracket-expressions)
 - [Quantifiers](#quantifiers)
 - [Grouping Constructs](#grouping-constructs)
-- [Bracket Expressions](#bracket-expressions)
 - [Character Classes](#character-classes)
-- [The OR Operator](#the-or-operator)
 - [Flags](#flags)
+- [The OR Operator](#the-or-operator)
 - [Character Escapes](#character-escapes)
 - [Conclusion](#conclusion)
 
