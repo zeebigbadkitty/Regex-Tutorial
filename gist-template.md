@@ -47,8 +47,17 @@ We'll circle back on other characters that may be included inside brackets in a 
 
 Just like you would think based on the name, quantifiers help identify the quantity of characters to match. They can also specify the number of instances of a group in a string. The idea here is that the quantifier will tell us how many times something is repeated. 
 
-((What do they look like?))
+You can spot a quantifier by curly braces ({}) with a range nested inside. Think about the range as the minimum and maximum number of times a character or string is repeated. When there is no specified limit or range, the limit becomes infinite. 
 
+```{1, 27}```
+
+The above quantifier is telling us that an item should be repeated at least 1 time, and up to 27 times!
+
+Other symbols that are quantifiers are the question mark (?), the asterisk (*), and the plus (+) sign. When you see these, try to also think of them as a range as outlined below. 
+
+* ? ---> {0, 1}
+* \* ---> {0,}
+* \+ ---> {1,}
 
 ### Grouping Constructs
 
@@ -59,13 +68,15 @@ So what if we have multiple bracket expressions? These can be grouped together a
 Notice again in our example that there are multiple bracket expressions encased in parenthesis; this is to group them and order them. 
 
 ### Character Classes
-These are the special roles that certain characters play within a given expression and they are indicated by a backslash. Here is an incomplete listing of the following characters that have these roles: 
+These are the special roles that certain characters play within a given expression and they are indicated by a backslash. Here is an partial listing of some of the characters that have these roles: 
 
-1. /s and /S: ((spaces))
-2. /d and /D: ((digit))
-3. /w and /W: ((word))
+1. /s and /S: denotes whitespace/spaces. This includes a traditional space, tab, or enter (when generating a new line.) The capital will search for the inverse condition.
+2. /d and /D: denotes digits [0-9] and the capital will search for the inverse condition.
+3. /w and /W: denotes "words." The capital will search for the inverse condition. 
 
 Another example of a special role that a character can play are anchors; remember /b and /B? Their special role was to show us the boundaries of a word. 
+
+If a carat (^) is used inside square brackets ([]), it has the same effect as using an exclamation point in our code; it searches for the inverse. 
 
 ### Flags
 Another grouping of characters that have a special job to do are flags; when we come across a flag, we take a specific action. Here are some examples: 
@@ -84,13 +95,29 @@ Within your expression an "or" operator may be found, or a pipe, similar to the 
 
 ``` (this|that)```
 
+The above line translates to "this" OR "that."
+
 ### Conclusion
 
 Given everything that's listed above, let's take a look at our example: 
 
 ``` /^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/ ```
 
-((What does it all mean?))
+Now let's break it up into three parts.
+
+```/^([a-z0-9_\.-]+)@```
+
+The initial slash is telling us this is a regex expression. The carat is an anchor telling us that we're at the beginning of our string. We then have a grouping (in parenthesis) of a bracket expression. This bracket expression is validating that our search matches alpha characters a through z, as well ad numerical digits 0 through 9 (and we're to also include a underscore, period, backslash, and hyphen.) We're then going to "add" an "@" symbol with a (+) sign, meaning there has to be at least one. 
+
+```([\da-z\.-]+)```
+
+Following our '@' symbol, we have another grouping of square brackets. This time we have a character class of /d, which we know is a digit, and again, matches will be made with alpha characters a through z and the same special characters as our previous segment. 
+
+```\.([a-z\.]{2,6})$/```
+
+We want to be sure that there is in fact a period (.) after the last grouping, so we must escape that character by adding a backslash. We then have a grouping of square brackets with alpha numerical characters like we've seen before, but this time we have a qualifier that specifies that we must have at least 2 to 6 characters included in our domain portion of our e-mail address. 
+
+All that being said, this isn't the *only* regex expression for validating an e-mail address; the can become quite complex! This one leaves quite a bit of room for returning undeliverable e-mails; there are some that use the OR (|) operator and include all available domains. As you can imagine, something that specific can change rapidly and would have to be expanded upon as more domains are created. 
 
 ## Author
 
